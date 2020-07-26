@@ -57,6 +57,9 @@ $.__bodymovin.bm_layerElement = (function () {
         layerData.ty = layerType === layerTypes.adjustment ? layerTypes.nullLayer : layerType;
         layerData.isAdjustment = layerType === layerTypes.adjustment;
         layerData.nm = layerInfo.name;
+        if (layerInfo.comment && layerInfo.comment.charAt(0) === "{") {
+            layerData.dynamicComment = JSON.parse(layerInfo.comment);
+        }
         var layerAttributes = bm_generalUtils.findAttributes(layerInfo.name);
         if(layerAttributes.ln){
             layerData.ln = layerAttributes.ln;
