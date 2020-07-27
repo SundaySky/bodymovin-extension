@@ -77,11 +77,15 @@
     "reselect": "^2.5.4"
   },
   "scripts": {
+    "preinstall": "npx npm-force-resolutions",
     "start": "node scripts/start.js",
     "start-dev": "concurrently --kill-others \"node scripts/start.js\" \"gulp watch-extension\"",
     "watch-gulp": "gulp watch-extension",
     "build": "gulp create-bm-extension-player && node scripts/build.js && gulp copy-extension-bundle",
     "test": "node scripts/test.js --env=jsdom"
+  },
+  "resolutions": {
+    "graceful-fs": "4.2.4"
   },
   "jest": {
     "collectCoverageFrom": [

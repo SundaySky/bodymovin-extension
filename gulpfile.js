@@ -11,7 +11,7 @@ var insert = require('gulp-insert');
 var version = '5.7.1'
 
 var extensionSource = './bundle';
-var extensionDestination = '../../../tropi/AppData/Roaming/Adobe/CEP/extensions/bodymovin';
+var extensionDestination = '/Library/Application Support/Adobe/CEP/extensions/bodymovin'; // TODO make generic. This is only for Noam...
 gulp.task('watch-extension', function() {
     gulp.src(extensionSource + '/**/*', {base: extensionSource})
         .pipe(watch(extensionSource, {base: extensionSource}))
